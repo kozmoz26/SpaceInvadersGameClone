@@ -3,7 +3,7 @@
 game! I will be teaching the pygame module and some basic game design principles
 as we walk through this.
 
-#Milestones
+# Milestones
 [x] Add Pygame and init\
 [ ] Creating Our First Game Window\
 [ ] Changing the Title, Logo and Background Color\
@@ -20,4 +20,4 @@ as we walk through this.
 [ ] Creating Multiple Enemies\
 [ ] Adding Text and Displaying Score\
 [ ] Adding Sounds and Background Music\
-[ ] Game Over\
+[ ] Game Over
