@@ -7,6 +7,10 @@ pygame.init()
 # Add game window
 screen = pygame.display.set_mode((800, 600))
 
+# Background image
+background = pygame.image.load("background.png")
+
+
 # Game title and logo
 pygame.display.set_caption("Space Invaders Clone")
 icon = pygame.image.load("ufo.png")
@@ -39,8 +43,8 @@ def enemy(x, y):
 running = True
 while running:
 
-    # RGB
-    screen.fill((0, 0, 0))
+    # Background Image
+    screen.blit(background, (0, 0))
 
     # Quit event
     for event in pygame.event.get():
@@ -62,7 +66,7 @@ while running:
         enemyX_change = 0.15
         enemyY += enemyY_change
     elif enemyX >= 736:
-        enemyX_change = -0.1
+        enemyX_change = -0.15
         enemyY += enemyY_change
 
     playerX += playerX_change
