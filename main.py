@@ -10,7 +10,6 @@ screen = pygame.display.set_mode((800, 600))
 # Background image
 background = pygame.image.load("background.png")
 
-
 # Game title and logo
 pygame.display.set_caption("Space Invaders Clone")
 icon = pygame.image.load("ufo.png")
@@ -39,6 +38,21 @@ def enemy(x, y):
     screen.blit(enemyImg, (x, y))
 
 
+# Bullet
+bulletImg = pygame.image.load('bullet.png')
+bulletX = 0
+bulletY = 480
+bulletX_change = 0
+bulletY_change = 10
+bullet_state = "ready"
+
+
+def fire_bullet(x, y):
+    global bullet_state
+    bullet_state = "fire"
+    screen.blit(bulletImg, (x + 16, y + 10))
+
+
 # Game loop
 running = True
 while running:
@@ -57,6 +71,8 @@ while running:
             playerX_change = -0.25
         if event.key == pygame.K_RIGHT:
             playerX_change = 0.25
+        if event.key == pygame.K_SPACE:
+            fire_bullet(playerX, bulletY)
     if event.type == pygame.KEYUP:
         if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
             playerX_change = 0
@@ -71,6 +87,11 @@ while running:
 
     playerX += playerX_change
     enemyX += enemyX_change
+
+    # Bullet movement
+    if bullet_state == "fire":
+        fire_bullet(bulletX, bulletY)
+        bulletY -= bulletY_change
 
     # Boundaries of the game
     if playerX <= 0:
