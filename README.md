@@ -1,7 +1,7 @@
 # SpaceInvaders
-"Space invaders" game clone with python. Im working through creating a full space shooter/invader 
+"Space invaders" game clone with python. I'm working through creating a full space shooter/invader 
 game! I will be learning the pygame module and some basic game design principles
-as we walk through this.
+as I walk through this.
 
 # Milestones
 [x] Add Pygame and init\
